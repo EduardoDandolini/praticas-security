@@ -29,10 +29,13 @@ import java.util.Date;
 public class TokenProvider {
 
     private static final int UNAUTHORIZED = 401;
+
     private final ObjectMapper objectMapper;
-    @Value("${jwt.key}")
+
+    @Value("${spring.jwt.key}")
     private String jwtKey;
-    @Value("${jwt.expiration-time}")
+
+    @Value("${spring.jwt.expiration-time}")
     private Integer expirationTime;
 
     public TokenResponse generateToken(Authentication authentication) {
